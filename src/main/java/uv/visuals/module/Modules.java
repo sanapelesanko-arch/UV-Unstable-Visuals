@@ -24,7 +24,7 @@ public class Modules {
     MUSIC_TEXT = add(new Module("MusicText","Music"));
     FULLBRIGHT = add(new Module("Fullbright","Visual"){ double old=1; public void onEnable(){ old=MinecraftClient.getInstance().options.getGamma().getValue(); MinecraftClient.getInstance().options.getGamma().setValue(15.0);} public void onDisable(){ MinecraftClient.getInstance().options.getGamma().setValue(old);} });
     INFO_HUD = add(new Module("InfoHUD","HUD"));
-    HALO = add(new Module("HaloCosmetic","Cosmetic").setting("Radius",0.5f,0.2f,1.2f){ public void tick(MinecraftClient mc){
+        HALO = add(new Module("HaloCosmetic","Cosmetic"){ { setting("Radius",0.5f,0.2f,1.2f); } public void tick(MinecraftClient mc){
       if(mc.player==null||mc.world==null||mc.player.age%2!=0) return; double a=mc.player.age*0.35, r=get("Radius");
       mc.world.addParticleClient(net.minecraft.particle.ParticleTypes.END_ROD, mc.player.getX()+Math.cos(a)*r, mc.player.getY()+mc.player.getHeight()+0.25, mc.player.getZ()+Math.sin(a)*r, 0,0,0);} });
     AUTO_SPRINT.enabled=true; BADGE.enabled=true;
