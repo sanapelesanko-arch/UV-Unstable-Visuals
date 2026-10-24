@@ -14,7 +14,7 @@ public class GlassScreen extends Screen {
     c.fill(px,py,px+pw,py+1,0xAAFFFFFF); c.fill(px,py,px+1,py+ph,0x88FFFFFF); // блик краёв
     c.fill(px,py+ph-1,px+pw,py+ph,0x55FFFFFF); c.fill(px+pw-1,py,px+pw,py+ph,0x55FFFFFF);
     var mc=MinecraftClient.getInstance();
-    if(mc.player!=null) PlayerSkinDrawer.draw(c,mc.player.getSkinTextures(),px+8,py+6,16);   // скин Microsoft-аккаунта
+    (c,mc.player.getSkinTextures(),px+8,py+6,16);   // скин Microsoft-аккаунта
     c.drawTextWithShadow(textRenderer,"UV Visuals  |  "+mc.getSession().getUsername(),px+30,py+11,0xFFD9B8FF);
     int y=py+30;
     for(Module m:Modules.ALL){
