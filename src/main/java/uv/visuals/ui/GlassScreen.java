@@ -1,7 +1,7 @@
 package uv.visuals.ui;
 import net.minecraft.client.MinecraftClient; import net.minecraft.client.gui.DrawContext; import net.minecraft.client.gui.Click;
-import net.minecraft.client.gui.screen.Screen; import net.minecraft.client.gui.PlayerSkinDrawer; import net.minecraft.text.Text;
-import uv.visuals.*; import uv.visuals.module.*; import java.util.*;
+import net.minecraft.client.gui.screen.Screen;  import net.minecraft.text.Text;
+import uv.visuals.*; import uv.visuals.module.*; import uv.visuals.module.Module; import java.util.*;
 /** Полупрозрачное "стеклянное" меню. Только fill/gradient через DrawContext => совместимо с VulkanMod. */
 public class GlassScreen extends Screen {
   int px,py,pw=360,ph=230; List<int[]> hit=new ArrayList<>(); List<Runnable> act=new ArrayList<>();
