@@ -1,6 +1,6 @@
 package uv.visuals.module;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.option.ParticlesMode;
+
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Items;
 import net.minecraft.screen.slot.SlotActionType;
@@ -18,7 +18,7 @@ public class Modules {
     TARGET = add(new Module("TargetHighlight","Visual"));
     OPTIMIZE = add(new Module("Optimization","Performance"){ public void onEnable(){
       MinecraftClient mc=MinecraftClient.getInstance(); var o=mc.options; if(o==null) return;
-      o.getParticles().setValue(ParticlesMode.MINIMAL); o.getBiomeBlendRadius().setValue(1);
+      { Object[] pv=((Enum<?>)o.getParticles().getValue()).getDeclaringClass().getEnumConstants(); ((net.minecraft.client.option.SimpleOption)o.getParticles()).setValue(pv[pv.length-1]); }; o.getBiomeBlendRadius().setValue(1);
       o.getEntityDistanceScaling().setValue(0.75); o.getFov(); o.getMipmapLevels().setValue(2); o.write(); }});
     BADGE = add(new Module("UV Badge","Cosmetic"));
     MUSIC_TEXT = add(new Module("MusicText","Music"));
