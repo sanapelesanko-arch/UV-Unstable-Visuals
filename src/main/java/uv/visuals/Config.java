@@ -1,6 +1,6 @@
 package uv.visuals;
 import com.google.gson.*; import java.nio.file.*; import java.util.*;
-import uv.visuals.module.*;
+import uv.visuals.module.*;import uv.visuals.module.Module;
 public class Config {
   public static final Path DIR = net.fabricmc.loader.api.FabricLoader.getInstance().getConfigDir().resolve("uvvisuals");
   static final Gson G = new GsonBuilder().setPrettyPrinting().create();
